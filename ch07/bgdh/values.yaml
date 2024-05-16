@@ -22,7 +22,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8082
+  port: 8083
 
 resources: {}
 
