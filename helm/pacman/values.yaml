@@ -1,6 +1,6 @@
 image:
   repository: quay.io/gitops-cookbook/pacman-kikd
-  tag: 1.2.0
+  tag: v1.2.0
   pullPolicy: Always
   containerPort: 8080
 
