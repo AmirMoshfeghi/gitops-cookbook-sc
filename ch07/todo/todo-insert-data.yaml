@@ -4,7 +4,7 @@ metadata:
   name: todo-insert
   annotations:
     argocd.argoproj.io/hook: PostSync # <1>
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded # Deleted after the hook succeed
 spec:
   ttlSecondsAfterFinished: 100
   template:
