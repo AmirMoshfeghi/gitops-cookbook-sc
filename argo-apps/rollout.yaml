@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: ro-test
-  namespace: argocd
+  namespace: default
 spec:
   destination:
     namespace: rollout
@@ -10,5 +10,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
-    path: rollout/rollout
+    path: rollout/
     targetRevision: main
