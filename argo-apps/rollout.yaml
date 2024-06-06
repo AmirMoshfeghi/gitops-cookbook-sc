@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ro-test
+  namespace: argocd
+spec:
+  destination:
+    namespace: rollout
+    server: https://kubernetes.default.svc 
+  project: default
+  source:
+    repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
+    path: rollout/rollout
+    targetRevision: main
