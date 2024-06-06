@@ -5,10 +5,10 @@ metadata:
   namespace: argocd
 spec:
   destination:
+    server: https://kubernetes.default.svc
     namespace: rollout
-    server: https://kubernetes.default.svc 
   project: default
   source:
     repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
-    path: rollout/rollout
+    path: rollout/
     targetRevision: main
