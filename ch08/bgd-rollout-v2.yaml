@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: bgd-rollouts
+spec:
+  replicas: 5
+  strategy:
+    canary:                         # Canary release
+      steps:                        # List of steps to execute
+      - setWeight: 20               # Ratio of canary
+      - pause: {}                   # Rollout is paused
+      - setWeight: 40
+      - pause: {duration: 30s}      # Pause rollout for 30 seconds
+      - setWeight: 60
+      - pause: {duration: 30s}
+      - setWeight: 80
+      - pause: {duration: 30s}
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: bgd-rollouts
+  template:                         # Deployment definition
+    metadata:
+      # creationTimestamp: null
+      labels:
+        app: bgd-rollouts
+    spec:
+      containers:
+      - image: quay.io/rhdevelopers/bgd:1.0.0
+        name: bgd
+        env:
+        - name: COLOR
+          value: "green"
+        resources: {}
