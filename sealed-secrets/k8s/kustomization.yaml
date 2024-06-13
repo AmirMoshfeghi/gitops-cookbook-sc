@@ -2,4 +2,4 @@ resources:
 - pacman-deployment.yaml
 - pacman-namespace.yaml
 - pacman-service.yaml
-- my-secert-sealed.yaml
+- my-secret-sealed.yaml
