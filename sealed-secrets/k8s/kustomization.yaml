@@ -2,5 +2,4 @@ resources:
 - pacman-deployment.yaml
 - pacman-namespace.yaml
 - pacman-service.yaml
-- amir-seal.yaml
 - sealed-orca.yaml
