@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/gitops-cookbook/gitops-cookbook-sc.git 4
-    path: 
+    repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
+    path:  grafana-example/
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
