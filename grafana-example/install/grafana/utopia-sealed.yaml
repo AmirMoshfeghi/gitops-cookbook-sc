@@ -1,0 +1,17 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: grafana-utopia-secret
+  namespace: monitoring
+spec:
+  encryptedData:
+    admin-password: AgB9BqZHVrwHKmDZrscMIhefLdkU6bAkPupjR9MTNYPVktexwP2Ne104a5UYnxujjyFhQnrNjLTXFtwsbgemF+zm/j06n1OwW2V6Zsac/TQvTM5XVaOMjkmzbi/tETAlv1C6aiqai65VTrpsEWQxMuoRIAPSM8kYtbFu6yzfgpu4VT7VOKP+jbU9mucXxfQI9xBZpWfgo6ga+hLYACT3Uc3kqHmUVq8a7lrHyfoENnDwzz8bhEmBmG9bSPUlUJf6Z7ChZiZHa/RGfeQy8SPXsoAzhRXo4ttmNKzKDTPdYwWEFZjTvYCd/cEy+sA1hZejZYwO5DZuM7I4/Chw/zbopna1n6grT/HCWKp/Wb/a7UJUQRJDDQYpyxPGupv5pSNUwrQazzw1pgoXEV8wtze5J2c9JivRMaiyS3fC7Cy4OVZTgjH/a8M1DqAGoUQvIkhA0dYSpYp6FFd8FImEqQruHamemKQXLP0ZQw8RfIs31xSU4WN9c8S13pLcjuZ2Odbzv0nBvM9nMiRsK8LvKsxxEYw0yr2PR0vU7NvYIsfc43MnmpvAs/sGxYhv9tGK4OHyUlXsS4VCsPIvSay998sNntAgouXB4gKMspHuyxMHoMfH0ZkYadsHDIL+k+UYbiTuOPXwmLC/7LpU4u+Lu70al+atXNJ7Myb1zayTpW7Eyr2M1D16o+yJL+iV6vXJNM7Jc8hF+fG4l+Y=
+    admin-user: AgAYvDr3rqyp/uKFYiK8dBrlbNFRG0BziFfZwsHfyK4sGQFaRyxn12P4CYF8CK+FsrefvsQ/0RRWHgGIEoUhYVNbAVCsHbiUfvUzxM2Vv9Fu1k370/JCpX4Ce3tc/HKxYoE9NLe9BjknzOEhBPkKp6oGQTeDyl+3vJIOmPHp7hn33tj862aJYsQiKQkyYZlwRFN0ZbkbKa0/hkv/C1asqe1kWuumU3ayxPxDkgC8E8q9S5sYcnqodUIny9DJK9Il8yYRFcDMYwmZNJ3p3/BYIb2NQt14eCo1nipIMguTdBJHVFriysrTo3P/KWwtZDC2Y85wv04fEH/z1PaU6bHILgdfmkfA1PaExfxR+lQG76fw9nNBWJwdnR3Yxa/Cdd9zB1NuIGsk96We8YBVZ5CDpmKJ3/GfakZ83zSaUsVDxiD+FNulFgJ6Pe5ShQ843K/vxJkn3+6VdazZCZSOvOmP847DaDmFr0l45J+kNUTNnSbJ6VhEpxe1l8D+4hsXoRTlYEMCnEZOtQe2PDb5DYk9+H1+NxiTbLCyIPgJEQzKPgqaQ5J7ba0Sn8ZmCkIgpHVm/pRPOfJ2dxyIVZaseUGsA4SaCT1YD4Cbqh5QUZcf8jk2EeSuT+xbGBzo83OT+kQtj2hN6lsjOLQJz1ipeWyhZmeVt+QFGHmfxchwcw+/yMGikMXBfvXROeC5yaOTZYZizbxi/ItLeBU=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: grafana-utopia-secret
+      namespace: monitoring
+    type: Opaque
