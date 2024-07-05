@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
-    path:  grafana-example/install/grafana
+    path:  grafana-example/install/helm
     targetRevision: HEAD
     helm:
       values: |
