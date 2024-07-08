@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sealed
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
+    path: secret-management-demo/sealed-secrets
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sealed
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+
