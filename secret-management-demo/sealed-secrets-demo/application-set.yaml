@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-appset
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git  # URL of your template repository
+      paths:
+      - path: "secrets-management-demo/sealed-secrets-demo"   # Path to application 1 within the repo
+        revision: HEAD
+      - path: "sealed-secrets/"   # Path to application 2 within the repo
+        revision: HEAD
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/managed-by: argocd
+    spec:
+      project: default
+      source:
+        repoURL: "{{inputs.parameters.source.repoURL}}"
+        path: "{{inputs.parameters.source.path}}"
+        targetRevision: "{{inputs.parameters.source.revision}}"
+      destination:
+        server: https://kubernetes.default.svc  # Your Kubernetes API server
+        namespace: sealed

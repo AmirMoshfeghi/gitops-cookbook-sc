@@ -25,10 +25,10 @@ spec:
         - name: USERNAME
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.env.usernameSecretName }}
-              key: {{ .Values.env.usernameSecretKey }}
+              name: {{ .Values.env.usernameSecret }}
+              key: {{ .Values.env.usernameKey }}
         - name: PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.env.passwordSecretName }}
-              key: {{ .Values.env.passwordSecretKey }}
+              name: {{ .Values.env.passwordSecret }}
+              key: {{ .Values.env.passwordKey }}
