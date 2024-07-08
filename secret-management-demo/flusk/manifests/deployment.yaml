@@ -1,0 +1,32 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-app
+  namespace: sealed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: login-app
+  template:
+    metadata:
+      labels:
+        app: login-app
+    spec:
+      containers:
+      - name: login-app
+        image: amirmoshfeghi/my-flux-demo
+        ports:
+        - containerPort: 5000
+        env:
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: sealed-secret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sealed-secret
+              key: password
