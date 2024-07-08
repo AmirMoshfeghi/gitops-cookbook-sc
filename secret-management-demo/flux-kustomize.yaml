@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git'
     targetRevision: HEAD
-    path: secret-management-demo/sealed-secrets-demo
+    path: secret-management-demo/sealed-secrets-demo/kustomize
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: sealed
