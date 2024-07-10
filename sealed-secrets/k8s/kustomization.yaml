@@ -1,5 +1,0 @@
-resources:
-- pacman-deployment.yaml
-- pacman-namespace.yaml
-- pacman-service.yaml
-- sealed-orca.yaml
