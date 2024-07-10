@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app.name }}
+  name: login-app
   namespace: sealed
   labels:
-    app: 
+    app: login-app
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.app.name }}
+      app: login-app
   template:
     metadata:
       labels:
-        app: {{ .Values.app.name }}
+        app: login-app
     spec:
       containers:
-      - name: {{ .Values.app.name }}
+      - name: login-app
         image: {{ .Values.image.repository }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:

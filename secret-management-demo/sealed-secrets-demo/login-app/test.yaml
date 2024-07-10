@@ -1,0 +1,53 @@
+---
+# Source: login-app/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: login-app
+  namespace: sealed
+  labels:
+    app: login-app
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    app: login-app
+---
+# Source: login-app/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-app
+  namespace: sealed
+  labels:
+    app: login-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: login-app
+  template:
+    metadata:
+      labels:
+        app: login-app
+    spec:
+      containers:
+      - name: login-app
+        image: amirmoshfeghi/my-flux-demo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        env:
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: sealed-secret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sealed-secret
+              key: password
