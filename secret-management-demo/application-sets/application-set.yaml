@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
   - git:
-      repoURL: 'https://github.com/your-username/sealed-secrets-demo.git'
+      repoURL: 'https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git'
       revision: HEAD
       directories:
       - path: 'login-app'
@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/your-username/sealed-secrets-demo.git'
+        repoURL: 'https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git'
         targetRevision: HEAD
         path: '{{path}}'
       destination:
