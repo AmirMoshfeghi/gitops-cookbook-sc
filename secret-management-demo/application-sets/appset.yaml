@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-addons
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+      repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
+      revision: HEAD
+      directories:
+      - path: 'secret-management-demo/sealed-secrets-demo/*'
+  template:
+    metadata:
+      name: '{{.path.basename}}'
+      namespace: argocd
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
+        targetRevision: HEAD
+        path: '{{.path.path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'sealed'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true

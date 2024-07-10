@@ -9,8 +9,8 @@ spec:
       repoURL: 'https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git'
       revision: HEAD
       directories:
-      - path: 'login-app'
-      - path: 'sealed-secrets'
+      - path: 'secret-management-demo/sealed-secrets-demo/login-app'
+      - path: 'secret-management-demo/sealed-secrets-demo/sealed-secrets'
   template:
     metadata:
       name: '{{path.basename}}'
@@ -27,5 +27,3 @@ spec:
         automated:
           prune: true
           selfHeal: true
-        syncOptions:
-        - CreateNamespace=true
