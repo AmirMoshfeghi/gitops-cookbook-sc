@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - grafana-app.yaml
+  - external-secret-app.yaml
+
+# Install the External Secret and Grafana app using ArgoCD Application

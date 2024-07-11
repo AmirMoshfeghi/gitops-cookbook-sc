@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
+    path:  grafana-example/install/helm
+    targetRevision: HEAD
+    helm:
+      values: |
+        admin:
+          existingSecret: "grafana-utopia-secret"
+          userKey: admin-user
+          passwordKey: admin-password
+  destination:
+    server: https://kubernetes.default.svc
+    # namespace: monitoring
+    namespace: external
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+# Install grafana and then patch the secret
