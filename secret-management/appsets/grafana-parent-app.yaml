@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git'
-    path: 'grafana-example/install/parent'
+    path: 'secret-management/external-secrets/grafana/parent'
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
