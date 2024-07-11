@@ -11,7 +11,7 @@ spec:
       repoURL: https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git
       revision: main
       directories:
-      - path: 'secret-management-demo/sealed-secrets/*'
+      - path: 'secret-management/sealed-secrets/*'
   template:
     metadata:
       name: '{{.path.basename}}'
