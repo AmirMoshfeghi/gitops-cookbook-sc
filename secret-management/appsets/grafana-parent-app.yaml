@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/AmirMoshfeghi/gitops-cookbook-sc.git'
     path: 'secret-management/external-secrets/grafana/parent'
-    targetRevision: HEAD
+    targetRevision: main
   destination:
     server: 'https://kubernetes.default.svc'
     # namespace: monitoring
