@@ -12,7 +12,7 @@ spec:
     helm:
       values: |
         admin:
-          existingSecret: "grafana-utopia-secret"
+          existingSecret: "grafana-admin-secret"
           userKey: admin-user
           passwordKey: admin-password
   destination:
